@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "frc-emulator",
+  "version": "${version}",
+  "name": "Frc Emulator",
+  "description": "A emulator for the FRC robot",
+  "authors": [
+    "BlueZeeKing"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/frc-emulator/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.blueish.frcemulator.client.FrcEmulatorClient"
+    ],
+    "main": [
+      "dev.blueish.frcemulator.FrcEmulator"
+    ]
+  },
+  "mixins": [
+    "frc-emulator.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
