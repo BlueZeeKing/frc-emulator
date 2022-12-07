@@ -4,8 +4,6 @@
   "package": "dev.blueish.frcemulator.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "DriverStationJNIMixin",
-    "RobotBaseMixin"
   ],
   "client": [
   ],
