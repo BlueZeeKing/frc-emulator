@@ -1,7 +1,10 @@
 package dev.blueish.frcemulator.robot;
 
+import com.jozufozu.flywheel.core.model.BlockModel;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
@@ -24,6 +27,7 @@ public class RobotEntityModel extends EntityModel<RobotEntity> {
                 .uv(20, 20).cuboid(-8.0F, -8.0F, -4.0F, 2.0F, 8.0F, 8.0F, new Dilation(0.0F))
                 .uv(0, 0).cuboid(5.0F, -5.0F, -1.0F, 1.0F, 2.0F, 2.0F, new Dilation(0.0F))
                 .uv(0, 20).cuboid(6.0F, -8.0F, -4.0F, 2.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+
         return TexturedModelData.of(modelData, 64, 64);
     }
 

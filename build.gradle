@@ -1,7 +1,6 @@
 plugins {
     id 'fabric-loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
-//    id "edu.wpi.first.GradleRIO" version "2023.0.0-alpha-1"
 }
 
 version = project.mod_version
@@ -11,7 +10,6 @@ repositories {
     maven {
         url "https://maven.tterrag.com/"
     }
-    flatDir { dirs 'local_maven' }
 }
 
 def includeDesktopSupport = false
@@ -25,23 +23,7 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-//    implementation wpi.java.deps.wpilib()
-//    implementation wpi.java.vendor.java()
-//
-//    nativeRelease wpi.java.deps.wpilibJniRelease(wpi.platforms.desktop)
-//    nativeRelease wpi.java.vendor.jniRelease(wpi.platforms.desktop)
-//
-//    nativeDebug wpi.java.deps.wpilibJniDebug(wpi.platforms.desktop)
-//    nativeDebug wpi.java.vendor.jniDebug(wpi.platforms.desktop)
-
-    implementation "edu.wpi.first.wpilibj:wpilibj"
-    implementation "edu.wpi.first.ntcore:ntcore"
-    implementation "edu.wpi.first.wpiutil:wpiutil"
-    implementation "edu.wpi.first.thirdparty.frc2019.opencv:opencv-java"
-    implementation "edu.wpi.first.cscore:cscore"
-    implementation "edu.wpi.first.cameraserver:cameraserver"
-    implementation "edu.wpi.first.hal:hal"
-    implementation "edu.wpi.first.math:wpimath"
+    modImplementation(include("com.jozufozu.flywheel:flywheel-fabric-1.19.2:${project.flywheel_version}"))
 }
 
 processResources {
@@ -98,12 +80,4 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
     }
-}
-
-runClient {
-    systemProperty "java.library.path", "${project.rootDir}/native_libs"
-}
-
-runServer {
-    systemProperty "java.library.path", "${project.rootDir}/native_libs"
 }
